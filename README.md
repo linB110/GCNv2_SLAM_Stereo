@@ -1,76 +1,161 @@
-# GCNv2 SLAM
+# 🌀 GCNv2\_SLAM-Stereo
 
-## Introduction
-GCNv2 is a high-throughput variant of the Geometric Correspondence Network for performing RGB-D SLAM online on embedded platforms. We trained the binary descriptor in the same format with ORB (32 bytes) for the convenience of integration. In this implementation, we evaluate the motion estimation using a system built on top the [ORB-SLAM2], (https://github.com/raulmur/ORB_SLAM2). Thanks to the robustness of ORB-SLAM2, our system is able to achive reliable tracking perfomance on our drone platform in real-time. 
+A modified version of [GCNv2\_SLAM](https://github.com/jiexiong2016/GCNv2_SLAM) and [ORB\_SLAM2](https://github.com/raulmur/ORB_SLAM2) with **stereo camera** support and enhanced setup instructions.
+This project enables real-time stereo visual SLAM using the GCNv2 keypoint extractor.
 
-## Example
-Online running performance with ORB and GCNv2 features:
+---
 
-ORB:
+## 🚀 Features
 
-![](orb.gif)
+* ✅ Added **stereo camera support**
+* ✅ Enhanced build instructions and Python environment setup
+* ✅ Support for [TUM](https://vision.in.tum.de/data/datasets/rgbd-dataset) / [EuRoC](https://projects.asl.ethz.ch/datasets/doku.php?id=kmavvisualinertialdatasets)
+* ✅ Integrated GCNv2 model accuracy visualizer
+* ✅ Compatible with `evo_ape` evaluation
 
-GCNv2:
+---
 
-![](gcn.gif)
+## 🛠 Environment & Dependencies
 
-## Related Publications
+Tested on:
 
-* **[GCNv2: Efficient Correspondence Prediction for Real-Time SLAM](https://arxiv.org/pdf/1902.11046.pdf)**, *J. Tang, L. Ericson, J. Folkesson and P. Jensfelt*, in arXiv:1902.11046, 2019
-* **[Geometric Correspondence Network for Camera Motion Estimation](http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8260906&isnumber=8214927)**, *J. Tang, J. Folkesson and P. Jensfelt*, RA-L and ICRA 2018
+* **OS**: Ubuntu 18.04 LTS
+* **GPU**: NVIDIA GeForce RTX 2060
+* **CUDA**: 10.2
+* **cuDNN**: Compatible with CUDA 10.2
+* **PyTorch**: 1.9.1 (built manually)
+* **CPU**: Intel Xeon E3-1230 V2
 
-# Dependencies
+### 📦 Required Downloads
 
-## C++11 or C++0x Compiler
-We use the new thread and chrono functionalities of C++11.
+* **libtorch (PyTorch C++ 1.9.1)**
 
-## Pytorch
-We use [Pytorch](https://github.com/pytorch/pytorch) C++ api(libtorch) for deloying the GCNv2. 
-The libtorch can be built as follows:
+```bash
+wget https://download.pytorch.org/libtorch/cu102/libtorch-cxx11-abi-shared-with-deps-1.9.1+cu102.zip
+unzip libtorch-cxx11-abi-shared-with-deps-1.9.1+cu102.zip
 ```
-git clone --recursive -b v1.0.1 https://github.com/pytorch/pytorch
-cd pytorch && mkdir build && cd build
-python ../tools/build_libtorch.py
-```
-The built libtorch library is located at ```pytorch/torch/lib/tmp_install/``` in default.
 
-**Update: Have added support for master branch of pytorch or version larger than 1.0.1. For newer version, set ```TORCH_PATH``` to ```pytorch/torch/share/cmake/Torch```**
+* **ORB\_SLAM2**
+  Follow setup guide: [https://github.com/raulmur/ORB\_SLAM2](https://github.com/raulmur/ORB_SLAM2)
 
-**Required at least 1.0.1. Lower version of pytorch has cuDNN linking issue:https://github.com/pytorch/pytorch/issues/14033#issuecomment-455046353.**
+---
 
-**Plese avoid using the pre-built version of libtorch since it will cause linking errors (due to [CXX11 ABI issue](https://github.com/pytorch/pytorch/issues/13541)).**
+## 🔧 Build GCNv2\_SLAM
 
-## Pangolin
-We use [Pangolin](https://github.com/stevenlovegrove/Pangolin) for visualization and user interface. Dowload and install instructions can be found at: https://github.com/stevenlovegrove/Pangolin.
+Make sure you're using the modified `CMakeLists.txt` provided in this repo.
 
-## OpenCV
-We use [OpenCV](http://opencv.org) to manipulate images and features. Dowload and install instructions can be found at: http://opencv.org. 
+Then build the project:
 
-**Required at least 2.4.3. Tested with OpenCV 2.4.11 and OpenCV 3.2**.
-
-## Eigen3
-Required by g2o (see below). Download and install instructions can be found at: http://eigen.tuxfamily.org. 
-
-**Required at least 3.1.0**.
-
-## DBoW2 and g2o (Included in Thirdparty folder)
-We use modified versions of the [DBoW2](https://github.com/dorian3d/DBoW2) library to perform place recognition and [g2o](https://github.com/RainerKuemmerle/g2o) library to perform non-linear optimizations. Both modified libraries (which are BSD) are included in the *Thirdparty* folder.
-
-# Preparation
-Clone the code
-```
-git clone https://github.com/jiexiong2016/GCNv2_SLAM.git
-```
-Then build the project 
-```
-cd GCNv2_SLAM
+```bash
 ./build.sh
 ```
-Make sure to edit `build.sh` pointing to your local libtorch installation. Edit `run.sh` to check out how to run with GCNv2 or vanilla ORB. Check the `Network.md` for the network structure and [link](https://drive.google.com/file/d/1MJMroL5-tl0b9__-OiCfxFP9K6X8kvTT/view) for trained models.
 
-# Image resolution
-**Update** Set "FULL_RESOLUTION=1" and use "gcn2_640x480.pt" to test with image resolution "640x480" intead. The input image size should be consitent with the model to be used.
+---
 
-# Demonstration video
+## 🥪 Test GCN Feature Extractor
 
-[![YouTube video thumbnail](https://i.ytimg.com/vi/pz-gdnR9tAM/hqdefault.jpg)](https://www.youtube.com/watch?v=pz-gdnR9tAM)
+Create a Python environment:
+
+```bash
+conda create -n gcnv2_env python=3.8 -y
+conda activate gcnv2_env
+conda install pytorch==1.10.2 torchvision==0.11.3 cudatoolkit=10.2 -c pytorch
+pip install opencv-python matplotlib
+```
+
+Run visualization:
+
+```bash
+python show_accuracy.py
+```
+
+### Output
+
+* A folder named `GCN_matching` will be created.
+* This folder contains keypoint matching visualizations.
+
+---
+
+## 🎮 Run GCNv2\_SLAM on Dataset
+
+### Model
+
+Use the provided model file:
+
+```
+model/gcn2_320x240.pt
+```
+
+### Create Association File
+
+```bash
+python associate.py
+```
+
+### Run SLAM
+
+```bash
+cd ~/GCN2
+
+GCN_PATH=/home/lab605/lab605/GCNv2_SLAM/GCN2/gcn2_320x240.pt ./rgbd_gcn \
+    /home/lab605/lab605/GCNv2_SLAM/Vocabulary/GCNvoc.bin \
+    /home/lab605/lab605/GCNv2_SLAM/GCN2/TUM3.yaml \
+    /home/lab605/lab605/dataset/TUM/rgbd_dataset_freiburg1_xyz \
+    /home/lab605/lab605/dataset/TUM/rgbd_dataset_freiburg1_xyz/association.txt
+```
+
+Make sure to update paths according to your system.
+
+---
+
+## 📊 Evaluation with `evo`
+
+Evaluate Absolute Pose Error using [`evo`](https://github.com/MichaelGrupp/evo):
+
+```bash
+evo_ape tum \
+    /home/lab605/lab605/dataset/TUM/rgbd_dataset_freiburg1_xyz/groundtruth.txt \
+    /home/lab605/lab605/GCNv2_SLAM/GCN2/KeyFrameTrajectory.txt \
+    --align --plot
+```
+
+---
+
+## 📁 Suggested Folder Structure
+
+```
+GCNv2_SLAM-Stereo/
+├── GCN2/
+│   ├── gcn2_320x240.pt
+│   ├── TUM3.yaml
+│   ├── KeyFrameTrajectory.txt
+├── Vocabulary/
+│   └── GCNvoc.bin
+├── dataset/
+│   └── TUM/...
+├── build.sh
+├── associate.py
+├── show_accuracy.py
+├── CMakeLists.txt
+└── ...
+```
+
+---
+
+## 🙏 Acknowledgements
+
+This project is based on:
+
+* [ORB\_SLAM2](https://github.com/raulmur/ORB_SLAM2)
+* [GCNv2\_SLAM](https://github.com/jiexiong2016/GCNv2_SLAM)
+
+Stereo support and additional tools were added in this fork.
+
+---
+
+## 📌 Notes
+
+* All dataset and model paths must be valid.
+* It's strongly recommended to use isolated Conda environments.
+* Pull requests are welcome if you wish to contribute!
+
