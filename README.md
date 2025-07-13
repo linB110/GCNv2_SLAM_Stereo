@@ -158,9 +158,10 @@ GCNv2_SLAM-Stereo/
 ---
 ## 📊 Evaluation 
 ✅ : fully track along wohle sequence
+
 ❌ : lost track during thje sequence
 
-| Dataset / Sequence                                       | ORB  | 320x240.pt | 640x480.pt | aug.pt | tiny |
+| Dataset / Sequence                                       | ORB  |  320x240.pt  |  640x480.pt  |  aug.pt  |  tiny  |
 |-----------------------------------------------------------|------|------------|------------|--------|------|
 | **TUM RGB-D**                                             |      |            |            |        |      |
 | rgbd_dataset_freiburg1_desk                               |  0.018781 ✅    |      0.036593 ❌     |     0.132776 ✅     | 0.020748 ✅       |   0.222797 ✅    |
