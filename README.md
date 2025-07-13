@@ -92,7 +92,7 @@ model/gcn2_320x240.pt
 python associate.py
 ```
 
-### Run SLAM
+### Run SLAM (TUM)
 
 ```bash
 cd ~/GCN2
@@ -102,6 +102,19 @@ GCN_PATH=/home/lab605/lab605/GCNv2_SLAM/GCN2/gcn2_320x240.pt ./rgbd_gcn \
     /home/lab605/lab605/GCNv2_SLAM/GCN2/TUM3.yaml \
     /home/lab605/lab605/dataset/TUM/rgbd_dataset_freiburg1_xyz \
     /home/lab605/lab605/dataset/TUM/rgbd_dataset_freiburg1_xyz/association.txt
+```
+
+### Run SLAM (EuRo『)
+
+```bash
+cd ~/GCN2
+
+ GCN_PATH=/home/lab605/lab605/GCNv2_SLAM/GCN2/gcn2_320x240.pt
+    /home/lab605/lab605/GCNv2_SLAM/GCN2/stereo_gcn /home/lab605/lab605/GCNv2_SLAM/Vocabulary/GCNvoc.bin
+    /home/lab605/lab605/ORB_SLAM2/Examples/Stereo/EuRoC.yaml
+    /home/lab605/lab605/dataset/EuRoC/MH_01/mav0/cam0/data
+    /home/lab605/lab605/dataset/EuRoC/MH_01/mav0/cam1/data
+    /home/lab605/lab605/ORB_SLAM2/Examples/Stereo/EuRoC_TimeStamps/MH01.txt
 ```
 
 Make sure to update paths according to your system.
