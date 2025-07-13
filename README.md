@@ -156,18 +156,19 @@ GCNv2_SLAM-Stereo/
 ---
 
 ---
-## 📊 EuRoC Stereo Evaluation 
+## 📊 Evaluation 
 
 | Method   | ORB | 320x240.pt | 640x480.pt | aug.pt | tiny  |
 |----------|------------|--------------|------------|------------|------------|
-| ORB      | 240x320    | No           |  xx.xx     |  xx.xx     |xx.xx     |
-| ORB      | 640x480    | No           |  xx.xx     |  xx.xx     |xx.xx     |
-| ORB      | 240x320    | Yes          |  xx.xx     |  xx.xx     |xx.xx     |
-| ORB      | 640x480    | Yes          |  xx.xx     |  xx.xx     |xx.xx     |
-| Tiny     | 240x320    | No           |  xx.xx     |  xx.xx     |xx.xx     |
-| Tiny     | 640x480    | No           |  xx.xx     |  xx.xx     |xx.xx     |
-| Tiny     | 240x320    | Yes          |  xx.xx     |  xx.xx     |xx.xx     |
-| Tiny     | 640x480    | Yes          |  xx.xx     |  xx.xx     |xx.xx     |
+| **TUM**   | 640x480    | Yes          |  xx.xx     |  xx.xx     |xx.xx     |
+| rgbd_dataset_freiburg1_desk     | 240x320    | No           |  xx.xx     |  xx.xx     |xx.xx     |
+| rgbd_dataset_freiburg1_xyz     | 640x480    | No           |  xx.xx     |  xx.xx     |xx.xx     |
+| rgbd_dataset_freiburg2_pioneer_360     | 240x320    | Yes          |  xx.xx     |  xx.xx     |xx.xx     |
+| rgbd_dataset_freiburg3_nostructure_notexture_near_withloop     | 640x480    | Yes          |  xx.xx     |  xx.xx     |xx.xx     |
+| **EuRoC**   | 240x320    | No           |  xx.xx     |  xx.xx     |xx.xx     |
+| MH_01      | 640x480    | No           |  xx.xx     |  xx.xx     |xx.xx     |
+| MH_05    | 240x320    | Yes          |  xx.xx     |  xx.xx     |xx.xx     |
+
 
 ---
 
