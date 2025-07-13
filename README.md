@@ -156,25 +156,26 @@ GCNv2_SLAM-Stereo/
 ---
 
 ---
-## 📊 Evaluation 
-✅ : fully track along wohle sequence
+## 📊 Evaluation
 
-❌ : lost track during thje sequence
+✅ : fully tracked along whole sequence  
+❌ : lost track during the sequence  
 
-| Dataset / Sequence                                       | ORB (nlevel=8) | ORB (nlevel=1) | 320x240.pt  | 640x480.pt  | aug.pt  | tiny  |
-|-----------------------------------------------------------|------|----------------|-------------|-------------|---------|-------|
-| **TUM RGB-D**                                             |      |                |             |             |         |       |
-| rgbd_dataset_freiburg1_desk                               | 0.018781 ✅ |  0.014945 ✅           | 0.036593 ❌  | 0.132776 ✅  | 0.020748 ❌ | 0.222797 ✅ |
-| rgbd_dataset_freiburg1_xyz                                | 0.012081 ✅ |  0.009779 ✅            | 0.080495 ✅  | 0.014587 ✅  | 0.088993 ✅ | 0.084459 ✅ |
-| rgbd_dataset_freiburg2_pioneer_360                        | 0.065314 ✅ | 0.028517 ✅          | 0.307028 ❌  | 0.585210 ❌  | 0.323715 ❌ | 0.079713 ❌ |
-| rgbd_dataset_freiburg3_nostructure_notexture_near_withloop | ❌         |  ❌           | ❌          | 0.004605 ❌  | ❌       | ❌     |
-| **EuRoC Stereo**                                          |      |      |             |             |         |       |
-| MH_01                                                     | 0.037540 ✅ |  0.040972 ✅            | 0.018083 ❌  | 0.175981 ✅  | 0.014021 ❌ | 0.038764 ❌ |
-| MH_05                                                     | 0.047538 ✅ |  0.188428 ✅        | 0.544578 ❌  | 0.892108 ❌  | 0.558102 ❌ | 0.052919 ❌ |
+| Dataset / Sequence                                        | ORB (nlevel=8) | ORB (nlevel=1) | 320x240.pt | 640x480.pt | aug.pt  | tiny  |
+|------------------------------------------------------------|----------------|----------------|------------|------------|---------|-------|
+| **TUM RGB-D**                                              |                |                |            |            |         |       |
+| rgbd_dataset_freiburg1_desk                                | 0.018781 ✅     | 0.014945 ✅     | 0.036593 ❌ | 0.132776 ✅ | 0.020748 ❌ | 0.222797 ✅ |
+| rgbd_dataset_freiburg1_xyz                                 | 0.012081 ✅     | 0.009779 ✅     | 0.080495 ✅ | 0.014587 ✅ | 0.088993 ✅ | 0.084459 ✅ |
+| rgbd_dataset_freiburg2_pioneer_360                         | 0.065314 ✅     | 0.028517 ✅     | 0.307028 ❌ | 0.585210 ❌ | 0.323715 ❌ | 0.079713 ❌ |
+| rgbd_dataset_freiburg3_nostructure_notexture_near_withloop  | ❌              | ❌              | ❌         | 0.004605 ❌ | ❌      | ❌     |
+| **EuRoC Stereo**                                           |                |                |            |            |         |       |
+| MH_01                                                      | 0.037540 ✅     | 0.040972 ✅     | 0.018083 ❌ | 0.175981 ✅ | 0.014021 ❌ | 0.038764 ❌ |
+| MH_05                                                      | 0.047538 ✅     | 0.188428 ✅     | 0.544578 ❌ | 0.892108 ❌ | 0.558102 ❌ | 0.052919 ❌ |
 
-For deetailed ORB_SLAM nlevel experiment ：（ORB_RMSE[https://github.com/linB110/orb_slam3_ros/tree/experiment/RMSE_experiment]
-
+For detailed ORB-SLAM `nlevel` experiment results, see:  
+👉 [ORB_RMSE Experiment (linB110/orb_slam3_ros)](https://github.com/linB110/orb_slam3_ros/tree/experiment/RMSE_experiment)
 ---
+
 
 ## 🙏 Acknowledgements
 
