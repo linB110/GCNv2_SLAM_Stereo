@@ -104,7 +104,7 @@ GCN_PATH=/home/lab605/lab605/GCNv2_SLAM/GCN2/gcn2_320x240.pt ./rgbd_gcn \
     /home/lab605/lab605/dataset/TUM/rgbd_dataset_freiburg1_xyz/association.txt
 ```
 
-### Run SLAM (EuRo『)
+### Run SLAM (EuRoC)
 
 ```bash
 cd ~/GCN2
