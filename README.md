@@ -157,17 +157,19 @@ GCNv2_SLAM-Stereo/
 
 ---
 ## 📊 Evaluation 
+✅ : fully track along wohle sequence
+❌ : lost track during thje sequence
 
-| Method   | ORB | 320x240.pt | 640x480.pt | aug.pt | tiny  |
-|----------|------------|--------------|------------|------------|------------|
-| **TUM**   | 640x480    | Yes          |  xx.xx     |  xx.xx     |xx.xx     |
-| rgbd_dataset_freiburg1_desk     | 240x320    | No           |  xx.xx     |  xx.xx     |xx.xx     |
-| rgbd_dataset_freiburg1_xyz     | 640x480    | No           |  xx.xx     |  xx.xx     |xx.xx     |
-| rgbd_dataset_freiburg2_pioneer_360     | 240x320    | Yes          |  xx.xx     |  xx.xx     |xx.xx     |
-| rgbd_dataset_freiburg3_nostructure_notexture_near_withloop     | 640x480    | Yes          |  xx.xx     |  xx.xx     |xx.xx     |
-| **EuRoC**   | 240x320    | No           |  xx.xx     |  xx.xx     |xx.xx     |
-| MH_01      | 640x480    | No           |  xx.xx     |  xx.xx     |xx.xx     |
-| MH_05    | 240x320    | Yes          |  xx.xx     |  xx.xx     |xx.xx     |
+| Dataset / Sequence                                       | ORB  | 320x240.pt | 640x480.pt | aug.pt | tiny |
+|-----------------------------------------------------------|------|------------|------------|--------|------|
+| **TUM RGB-D**                                             |      |            |            |        |      |
+| rgbd_dataset_freiburg1_desk                               |  0.018781 ✅    |      0.036593 ❌     |     0.132776 ✅     | 0.020748 ✅       |   0.222797 ✅    |
+| rgbd_dataset_freiburg1_xyz                                |   0.012081 ✅   |        0.080495 ✅    |       0.014587 ✅    |   0.088993 ✅     |  0.084459 ✅     |
+| rgbd_dataset_freiburg2_pioneer_360                        |  0.065314 ✅    |        0.307028 ❌   |      0.585210 ❌      |   0.323715 ✅     |    0.079713 ❌  |
+| rgbd_dataset_freiburg3_nostructure_notexture_near_withloop |   ❌   |        ❌    |  0.004605 ❌         |     ❌   |   ❌   |
+| **EuRoC Stereo**                                          |      |            |            |        |      |
+| MH_01                                                     |    0.037540 ✅ |    0.018083 ❌    |      0.175981 ✅    |   0.014021 ❌     |  0.038764 ❌    |
+| MH_05                                                     |    0.047538 ✅  |    0.544578 ❌  |     0.892108 ❌    |   0.558102 ❌    |  0.052919 ❌    |
 
 
 ---
