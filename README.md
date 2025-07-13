@@ -158,16 +158,16 @@ GCNv2_SLAM-Stereo/
 ---
 ## 📊 EuRoC Stereo Evaluation 
 
-| Method   | Resolution | Augmentation | MH_01 RMSE | MH_05 RMSE |
-|----------|------------|--------------|------------|------------|
-| ORB      | 240x320    | No           |  xx.xx     |  xx.xx     |
-| ORB      | 640x480    | No           |  xx.xx     |  xx.xx     |
-| ORB      | 240x320    | Yes          |  xx.xx     |  xx.xx     |
-| ORB      | 640x480    | Yes          |  xx.xx     |  xx.xx     |
-| Tiny     | 240x320    | No           |  xx.xx     |  xx.xx     |
-| Tiny     | 640x480    | No           |  xx.xx     |  xx.xx     |
-| Tiny     | 240x320    | Yes          |  xx.xx     |  xx.xx     |
-| Tiny     | 640x480    | Yes          |  xx.xx     |  xx.xx     |
+| Method   | ORB | 320x240.pt | 640x480.pt | aug.pt | tiny  |
+|----------|------------|--------------|------------|------------|------------|
+| ORB      | 240x320    | No           |  xx.xx     |  xx.xx     |xx.xx     |
+| ORB      | 640x480    | No           |  xx.xx     |  xx.xx     |xx.xx     |
+| ORB      | 240x320    | Yes          |  xx.xx     |  xx.xx     |xx.xx     |
+| ORB      | 640x480    | Yes          |  xx.xx     |  xx.xx     |xx.xx     |
+| Tiny     | 240x320    | No           |  xx.xx     |  xx.xx     |xx.xx     |
+| Tiny     | 640x480    | No           |  xx.xx     |  xx.xx     |xx.xx     |
+| Tiny     | 240x320    | Yes          |  xx.xx     |  xx.xx     |xx.xx     |
+| Tiny     | 640x480    | Yes          |  xx.xx     |  xx.xx     |xx.xx     |
 
 ---
 
